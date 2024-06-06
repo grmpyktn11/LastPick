@@ -2,6 +2,8 @@
  system to store league champs and recommend what to play
  ![alt text](https://media.discordapp.net/attachments/984340998551404584/1248156626683297792/image.png?ex=6662a3f1&is=66615271&hm=cf93d7121d0cccd1f503d6e97c46ce7febc2cf0fea7bc30a097919c9a6f98eeb&=&format=webp&quality=lossless)
 
+# INSTALL DEPENDANCIES
+    to install, simply enter pip install -r requirements.txt
 
 # login and registration:
      You can register for an account stored in a database (hosted with clever cloud because jts free :3).
