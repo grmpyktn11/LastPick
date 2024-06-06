@@ -140,7 +140,10 @@ if __name__ == "__main__":
                 print("you are already logged in")
         if(response == 'register'):
             addUser()
-        
+            newLogin = input("for confirmaion, enter your username.")
+            credentials = checkUser(newLogin)
+            login = True        
+            print('you are now logged in!')
         if(response == 'check'):
             lanes = ["top",'mid','jungle','adc','support']
             lane = input("what lane are you playing")
