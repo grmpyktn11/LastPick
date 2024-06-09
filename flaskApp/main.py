@@ -40,8 +40,9 @@ def login():
         session["user"] = user
         
         if helperFunctions.verifyUser(user):
-            return redirect(url_for("check", usr = user))
             loggedInStatus = True
+            return redirect(url_for("check", usr = user))
+            
         else:
             return render_template("login.html", loggedIn = False, failedLogin = True)
 
@@ -73,8 +74,8 @@ def check():
         enemy = request.form["opponent"]
         lane = request.form["lane"]
         topCounters = helperFunctions.getCounters(enemy,3,lane)
-        print(helperFunctions.playsCounter(session["user"],enemy,lane))
-        if(loggedInStatus != "You are not logged in."):
+        
+        if(loggedInStatus != "You are not logged in." and session.get("user")):
             playerPlaysCounter = helperFunctions.playsCounter(session["user"],enemy,lane)
         else:
             playerPlaysCounter = "Login/register to get personalized recs!"

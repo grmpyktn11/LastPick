@@ -38,8 +38,8 @@ def addUser(name, pool):
             return("One of your champs is not a valid champ")
     if (verifyUser(name)):
         return("Username has been taken.")
-    cursor.execute(f"INSERT INTO Player (name,champs) VALUES (%s,%s)", (name, pool))
-    db.commit
+    cursor.execute(f"INSERT INTO Player (name,champs) VALUES (%s,%s)", (name.capitalize(), pool))
+    db.commit()
     return("User has been successfully registered, please log in.")
 
     
@@ -90,6 +90,8 @@ def playsCounter(user,opp, lane):
     userChamps = cursor.fetchone()[0].split(',')
     
     for i in userChamps:
-        if i in oppsCounters:
+        if i.capitalize() in oppsCounters:
             return (f"You should play {i}, they are one of your mains and in the top 10 counters for {opp}")
     return ("you dont main any of the top 10 counters, try a new champ!")
+
+checkDb()
