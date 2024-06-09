@@ -7,7 +7,7 @@ import mysql.connector
 
 
 app = Flask(__name__)
-app.secret_key = databaseInfo.appSecretKey
+app.secret_key = databaseInfo.key
 
 loggedInStatus = False #global variable to track login
 failedLogin = False
@@ -34,12 +34,14 @@ def register():
 
 @app.route("/login", methods=["GET","POST"])
 def login():
+    global loggedInStatus
     if request.method == "POST":
         user = request.form["nm"]
         session["user"] = user
         
         if helperFunctions.verifyUser(user):
             return redirect(url_for("check", usr = user))
+            loggedInStatus = True
         else:
             return render_template("login.html", loggedIn = False, failedLogin = True)
 
@@ -48,8 +50,9 @@ def login():
     
 @app.route("/logout")
 def logout():
+    global loggedInStatus
     session.pop("user", None)
-    loggedIn = False
+    loggedInStatus = False
     flash("you have been logged out")
     return redirect(url_for("check"))
 
@@ -69,9 +72,9 @@ def check():
         checkCalled = True
         enemy = request.form["opponent"]
         lane = request.form["lane"]
-
         topCounters = helperFunctions.getCounters(enemy,3,lane)
-        if(loggedInStatus == True):
+        print(helperFunctions.playsCounter(session["user"],enemy,lane))
+        if(loggedInStatus != "You are not logged in."):
             playerPlaysCounter = helperFunctions.playsCounter(session["user"],enemy,lane)
         else:
             playerPlaysCounter = "Login/register to get personalized recs!"
