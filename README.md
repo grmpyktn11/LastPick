@@ -1,8 +1,10 @@
 
 # BIG UPDATE ON 6/9... WRITEUP FOLLOWING SHORTLY
 # LastPick
- system to store league champs and recommend what to play
- ![alt text](https://media.discordapp.net/attachments/984340998551404584/1248156626683297792/image.png?ex=6662a3f1&is=66615271&hm=cf93d7121d0cccd1f503d6e97c46ce7febc2cf0fea7bc30a097919c9a6f98eeb&=&format=webp&quality=lossless)
+
+ # video demo
+ [![YT LINK](https://img.youtube.com/vi/pbHGPG36QSc/0.jpg)](https://www.youtube.com/watch?v=pbHGPG36QSc)
+CLICK 
 
 # INSTALL DEPENDANCIES
     to install, simply enter pip install -r requirements.txt
