@@ -1,7 +1,7 @@
 import mysql.connector
-import champions 
+import flaskApp.champions as champions 
 import databaseInfo
-import helperFunctions
+import flaskApp.helperFunctions as helperFunctions
 import requests
 from bs4 import BeautifulSoup
 
