@@ -1,7 +1,8 @@
 
 # BIG UPDATE ON 6/9... WRITEUP FOLLOWING SHORTLY
 # LastPick
-
+ APP IS NOW LIVE!!! ACCESS IT USING THE BUTTON IN MY WEBSITE! https://grmpyktn11.github.io/kmoosa/
+ 
  # video demo
  [![YT LINK](https://img.youtube.com/vi/pbHGPG36QSc/0.jpg)](https://www.youtube.com/watch?v=pbHGPG36QSc)
 CLICK 
